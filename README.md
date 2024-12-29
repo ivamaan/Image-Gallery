@@ -25,4 +25,6 @@ Keyboard Accessibility: Users can navigate through images using keyboard shortcu
 Smooth Transitions: Provides a visually appealing experience with smooth image transitions and scaling effects on hover.
 
     
-        
+Donate if you like my work:
+USDT-Tron:
+TXijXLmsQ6dqjh9tHkeSZCkvv53RrUmaVT
