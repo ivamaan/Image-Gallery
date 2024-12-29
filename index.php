@@ -71,22 +71,31 @@
             transform: translate(-50%, -50%);
             position: absolute;
             border-radius: 5px;
+            transition: transform 0.3s ease; /* Add transition for zoom */
         }
+
+        .zoomed {
+         width: 1400px; /* Scale the image */
+         border-radius: 10px;
+        }
+
         .fullsc {
             position: absolute;
-            top: 15px;
-            left: 35px;
+            top: 18px;
+            right: 70px;
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.2s;
             z-index: 99;
         }
+
         .fullsc:hover {
             color: #666;
-            transform:scale(1.1);
+            transform: scale(1.1);
         }
+
         .close {
             position: absolute;
             top: 15px;
@@ -98,9 +107,10 @@
             transition: 0.2s;
             z-index: 99;
         }
+
         .close:hover {
             color: red;
-            transform:scale(1.2);
+            transform: scale(1.2);
         }
 
         .nav-button {
@@ -114,8 +124,9 @@
             z-index: 2;
             transition: 0.2s;
         }
+
         .nav-button:hover {
-            color:#822dff;
+            color: #822dff;
         }
 
         .prev {
@@ -131,11 +142,17 @@
             .image-container {
                 width: calc(100% / 2 - 20px);
             }
+
             .container {
                 padding: 5px;
             }
+
             .image-container img {
                 height: 180px;
+            }
+
+            .fullsc {
+                display: none;
             }
         }
     </style>
@@ -163,7 +180,8 @@
     <span class="close" onclick="closeModal()">&times;</span>
     <span class="fullsc" onclick="">&#10697;</span>
     <span class="nav-button prev" onclick="changeImage(-1)">&#10094;</span>
-    <img class="modal-content" id="img01">
+    <img class="modal-content" id="img01" ondblclick="toggleZoom(event)">
+    <p style="display: block;position: absolute;margin: auto;text-align: center;width: 100%;bottom: 10px;color: #fff;font-size: 11px;opacity: 0.2;">Double click to zoom</p>
     <span class="nav-button next" onclick="changeImage(1)">&#10095;</span>
 </div>
 
@@ -171,6 +189,7 @@
     let images = <?php echo json_encode($images); ?>; // Pass images array to JavaScript
     let currentIndex = 0; // Track the current image index
     let touchStartX = 0; // Track the starting X coordinate for touch
+    let isZoomed = false; // Track zoom state
 
     function openModal(imgSrc) {
         currentIndex = images.indexOf(imgSrc); // Set current index
@@ -181,6 +200,7 @@
         const imgElement = document.getElementById("img01");
         imgElement.src = imgSrc;
         imgElement.style.opacity = 1; // Ensure it is visible
+        imgElement.classList.remove('zoomed'); // Reset zoom
 
         // Add event listeners for keyboard, mouse scroll, and touch navigation
         document.addEventListener('keydown', handleKeydown);
@@ -259,11 +279,20 @@
         // Optionally, reset the transition style if needed after a delay
         setTimeout(() => {
             imgElement.style.transition = ""; // Reset transition
-        }, 100); // Match this with the transition duration
+        }, 500); // Match this with the transition duration
+    }
+
+    function toggleZoom(event) {
+        const imgElement = document.getElementById("img01");
+        isZoomed = !isZoomed; // Toggle zoom state
+        if (isZoomed) {
+            imgElement.classList.add('zoomed'); // Apply zoom class
+        } else {
+            imgElement.classList.remove('zoomed'); // Remove zoom class
+        }
     }
 </script>
-  
-    
+
 <script>
 // Function to navigate between image containers using keyboard
 function handleImageNavigation(event) {
@@ -273,13 +302,11 @@ function handleImageNavigation(event) {
     );
 
     switch(event.key) {
-        case 'ArrowRight':
         case 'ArrowDown':
             // Move to next image container, wrap around to first if at end
             const nextIndex = (currentIndex + 1) % images.length;
             images[nextIndex].focus();
             break;
-        case 'ArrowLeft':
         case 'ArrowUp':
             // Move to previous image container, wrap around to last if at beginning
             const prevIndex = (currentIndex - 1 + images.length) % images.length;
