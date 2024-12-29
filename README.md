@@ -4,20 +4,23 @@ Create a Folder called "images" in same Directory.
 
 Features:
 
-Responsive Design: Adapts to various screen sizes, ensuring a great viewing experience on both desktop and mobile devices.
-Image Loading: Automatically fetches and displays images from a specified directory, supporting multiple formats (JPG, PNG, GIF).
-Image Modal: Clicking on an image opens a modal window that displays the image in a larger format.
-Navigation Controls: 
-Users can navigate through images using:
-Arrow keys
-Mouse scroll
-Touch gestures (swipe left/right)
-Fullscreen Support: Users can toggle fullscreen mode for an immersive viewing experience.
-Keyboard Accessibility: Users can navigate through images using keyboard shortcuts, enhancing accessibility.
-Smooth Transitions: Provides a visually appealing experience with smooth image transitions and scaling effects on hover.
+	Responsive Design: Adapts to various screen sizes, ensuring a great viewing experience on both desktop and mobile devices.
+	Image Loading: Automatically fetches and displays images from a specified directory, supporting multiple formats (JPG, PNG, GIF).
+	Image Modal: Clicking on an image opens a modal window that displays the image in a larger format.
+ 
+	Navigation Controls: 
+	Users can navigate through images using:
+	+Arrow keys
+	+Mouse scroll
+	+Touch gestures (swipe left/right)
+ 
+	Fullscreen Support: Users can toggle fullscreen mode for an immersive viewing experience.
+	Keyboard Accessibility: Users can navigate through images using keyboard shortcuts, enhancing accessibility.
+	Smooth Transitions: Provides a visually appealing experience with smooth image transitions and scaling effects on hover.
 
 
 __________________________________    
-Donate if you like my work:
-USDT-Tron:
-TXijXLmsQ6dqjh9tHkeSZCkvv53RrUmaVT
+Donate if you like my work:✨🙏
+USDT-TRON:
+
+	TXijXLmsQ6dqjh9tHkeSZCkvv53RrUmaVT
