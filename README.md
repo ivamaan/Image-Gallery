@@ -30,8 +30,12 @@ Smooth Transitions: Provides a visually appealing experience with smooth image t
 
 
 __________________________________    
-Donate if you like my work:✨🙏
+Support My Work
 
-USDT-TRON:
+If you enjoy my work and would like to support me, consider making a donation! Your contributions help keep this project alive and thriving. ✨🙏
+
+Donate via USDT on TRON:
 
 	TXijXLmsQ6dqjh9tHkeSZCkvv53RrUmaVT
+
+Thank you for your support!
